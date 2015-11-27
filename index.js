@@ -23,7 +23,7 @@ function deepDir (path, config) {
 	}.bind(this) );
 
 	this.on('goThrogh.isFile', function(path) {
-		var ext = nativePath.parse(path).ext;
+		var ext = nativePath.extname(path);
 		var filters = config.filters;
 		if ( filters.hasOwnProperty(ext) ) {
 			filters[ext].call(this, path);
