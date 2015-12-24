@@ -38,7 +38,7 @@ function goThrough (path, maxPathDepth, basePathDepth) {
 		if (stat.isFile()) {
 			that.emit('goThrogh.isFile', path);
 		} else {
-			if (maxPathDepth && (getPathDepth(path, nativeSep) - basePathDepth) >= maxPathDepth  ) {
+			if (typeof maxPathDepth === 'number' && (getPathDepth(path, nativeSep) - basePathDepth-1) >= maxPathDepth  ) {
 				return;
 			}
 
@@ -58,6 +58,10 @@ function goThrough (path, maxPathDepth, basePathDepth) {
 deepDir.prototype.goThrough = goThrough;
 
 function getPathDepth (path, sep) {
+	path = path
+		.replace( /^[\/|\\]/ , '')
+		.replace( /[\/|\\]$/ , '');
+
 	return path.split(sep).length;
 }
 
