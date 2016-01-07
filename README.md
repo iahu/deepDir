@@ -1,6 +1,7 @@
 #deepDir
 a personal node module
 
+[![Build Status](https://travis-ci.org/iahu/deepDir.png)](https://travis-ci.org/iahu/deepDir)
 
 ## Description
 深度遍历文件夹。
