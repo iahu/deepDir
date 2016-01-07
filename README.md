@@ -1,27 +1,66 @@
-#deepDir - node module
+#deepDir
+a personal node module
 
-深度遍历文件夹。可按文件类型过滤文件。
 
+## Description
+深度遍历文件夹。
+deep scan someone path.
 
-##安装
-
+## Install
 npm install deep-dir
 
-##用法
 
+## How to
+
+version `>= 2.*`
 ```javascript
-argvs.forEach(function(path){
-	deepDir(path, {
-		filters: {
-			'.css' : cssFilter,
-			'.js': jsFilter,
-			'.html': htmlFilter
-		},
-		depth: depth // depth int型 遍历深度,0表示不限制深度
-	});
-});
+var deepDir = require('deep-dir');
+var path = './';
 
-function cssFiler(path) {
-	console.log(path);
+deepDir(path, /* maxPathDepth = 99, */ function (path, stat) {
+	// do somthing
+});
+```
+
+version `~ 1.*`
+```
+deepDir(path, {
+    filters: {
+        '.css' : cssFilter,
+        '.js': jsFilter,
+        '.html': htmlFilter
+    },
+    depth: depth // {int} depth "path depth"
+});
+```
+
+## Events
+- isFile
+
+	`function(data) {}`
+
+- isDirectory
+
+	`function(data) {}`
+
+- error
+
+	`function(error) {}`
+
+- overMaxDepth
+
+	`function(data) {}`
+
+- goThrough
+
+	`function(data) {}`
+
+while `data` is	
+```
+{
+	path: 'current path',
+	base: 'base name of path',
+	stat: 'file stat of path',
+	depth: 'current depth value'
 }
 ```

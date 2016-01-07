@@ -1,7 +1,7 @@
 {
   "name": "deep-dir",
   "version": "1.0.3",
-  "description": "",
+  "description": "深度遍历文件夹。deep scan some path.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
