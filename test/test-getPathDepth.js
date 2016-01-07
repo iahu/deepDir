@@ -9,15 +9,15 @@ describe('deepDir', function () {
 	describe('#getPathDepth(path)', function () {
 		it('should normalize the path depend on platform', function() {
 			if ( platform.indexOf('win') === 0 ) {
-				assert.equal(1, getPathDepth('/root/'));
-				assert.equal(2, getPathDepth('/root/lib/'));
-				assert.equal(3, getPathDepth('/root/lib/bin'));
-				assert.equal(2, getPathDepth('/root/lib/../bin'));
-			} else {
 				assert.equal(1, getPathDepth('E:\\'));
 				assert.equal(2, getPathDepth('E:\\pic\\'));
 				assert.equal(3, getPathDepth('E:\\pic\\2016'));
 				assert.equal(2, getPathDepth('E:\\pic\\..\\2016'));
+			} else {
+				assert.equal(1, getPathDepth('/root/'));
+				assert.equal(2, getPathDepth('/root/lib/'));
+				assert.equal(3, getPathDepth('/root/lib/bin'));
+				assert.equal(2, getPathDepth('/root/lib/../bin'));
 			}
 		});
 
