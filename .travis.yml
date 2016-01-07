@@ -9,4 +9,4 @@ node_js:
   - "0.6"
   - "iojs"
 install:
-	- "npm install mocha -g"
+  - "npm install mocha -g"
