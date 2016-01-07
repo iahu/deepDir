@@ -95,9 +95,10 @@ deepDir.prototype.goThrough = goThrough;
 
 
 function getPathDepth (path) {
-	path = nativePath.normalize(path).replace( /^[\\\/]|[\\\/]$/g, '' );
+	path = nativePath.normalize(path.replace(/\\/g, '/'));
+	path = path.replace(/\\/g, '/').replace( /^\/|\/$/g, '' );
 
-	return path.split(/[\\\/]/g).length;
+	return path.split('/').length;
 }
 deepDir.prototype.getPathDepth = getPathDepth;
 
