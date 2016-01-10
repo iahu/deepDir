@@ -1,6 +1,6 @@
 {
   "name": "deep-dir",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "深度遍历文件夹。deep scan some path.",
   "main": "index.js",
   "scripts": {
