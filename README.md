@@ -1,6 +1,8 @@
 #deepDir
 a personal node module
 
+**Why not just use (node-glob)[https://github.com/isaacs/node-glob]**
+
 [![Build Status](https://travis-ci.org/iahu/deepDir.png)](https://travis-ci.org/iahu/deepDir)
 
 ## Description
